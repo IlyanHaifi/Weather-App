@@ -1,7 +1,10 @@
 <?php
 
-it('returns a successful response', function () {
+test('the application returns a successful response', function () {
     $response = $this->get('/');
 
-    $response->assertStatus(200);
+    $response
+        ->assertStatus(200)
+        ->assertSee('Bienvenue sur votre application météo')
+        ->assertSee('Fonctionnalités prévues');
 });
